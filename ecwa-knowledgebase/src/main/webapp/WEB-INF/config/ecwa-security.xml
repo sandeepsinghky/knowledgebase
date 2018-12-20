@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd                           
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<global-method-security secured-annotations="enabled" />
+	<!-- <mvc:annotation-driven /> <debug /> -->
+
+	<http pattern="/403.htm" security="none" />
+	<http pattern="/404.htm" security="none" />
+	<http pattern="/500.htm" security="none" />
+	<http pattern="/error.htm" security="none" />
+	<http pattern="/css/**" security="none" />
+	<http pattern="/images/**" security="none" />
+	<http pattern="/js/**" security="none" />
+	<http pattern="/login.htm" security="none" />
+	<http pattern="*/accessDenied.htm" security="none" />
+
+	<http use-expressions="true">
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/searchworker.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseApplicationList.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseApplicationPartList.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseActsPartList.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseApplicationSearch.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseActsPartDetails.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseActsCreate.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseApplicationLock.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseApplicationPartUpdate.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/cswp/user/caseApplicationPartMiscInfo.htm*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/logout.htm*" />
+
+		<intercept-url pattern="/cswp/user/**" access="isAuthenticated()" />
+
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/reports?ReportName=ecwa\all\*" />
+		<intercept-url access="hasRole('PERMISSION_VIEW_EDIT_ALL_USERS')" pattern="/reports*" />
+
+
+		<!-- authentication-success-handler-ref= -->
+
+		<form-login login-page='/login.htm' login-processing-url="/j_spring_security_check" default-target-url='/loginRoute.htm'
+			authentication-failure-url="/loginerr.htm?login_error=1" always-use-default-target='true' />
+		<logout delete-cookies="true" logout-success-url='/logout.htm' />
+
+
+		<session-management>
+			<concurrency-control max-sessions="1" />
+		</session-management>
+
+		<remember-me />
+	</http>
+
+	<authentication-manager erase-credentials="true">
+		<authentication-provider ref="daoAuthenticationProvider" />
+	</authentication-manager>
+
+
+	<beans:bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<beans:property name="decisionVoters">
+			<beans:list>
+				<beans:ref bean="roleVoter" />
+				<beans:ref bean="authenticatedVoter" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+		<beans:property name="rolePrefix" value="PERMISSION_" />
+	</beans:bean>
+
+	<beans:bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter" />
+
+	<beans:bean id="daoAuthenticationProvider" class="nc.dhhs.nccss.acts.ecwa.web.security.EcwaDaoAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="userDetailsService" />
+	</beans:bean>
+
+	<beans:bean id="userDetailsService" class="nc.dhhs.nccss.acts.ecwa.web.security.EcwaUserDetailsServiceImpl">
+		<beans:property name="authenticationService" ref="authenticationService" />
+	</beans:bean>
+
+	<beans:bean id="authenticationService" class="nc.dhhs.nccss.acts.ecwa.web.service.impl.AuthenticationWebServiceImpl" />
+
+
+</beans:beans>
+    
+	

@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="VP">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/button.css" rel="stylesheet" type="text/css" />
+<link href="css/general.css" rel="stylesheet" type="text/css" />
+<link href="css/lightbox.css" rel="stylesheet" type="text/css" />
+<link href="css/autocomplete.css" rel="stylesheet" type="text/css" />
+<link href="css/calendar.css" rel="stylesheet" type="text/css" />
+<link href="images/favicon.ico" rel="icon" type="image/ico" />
+<title>North Carolina Child Support Portal</title>
+<!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.pngFix.pack.js"></script>
+<script type="text/javascript" src="js/datetimepicker.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/lightBox.js"></script>
+<script type="text/javascript" src="js/hover.menu.js"></script>
+</head>
+<body>
+	<div id="wrap2">
+		<div id="header">		
+			<a href="https://www.ncdhhs.gov/"><img id="logo"/></a>
+		</div>
+		<div>
+			<ul class="header2">
+				<h3 align="center">North Carolina Child Support Services</h3>
+			</ul>
+		</div>
+		<div>
+			<ul class="nav">
+				<li><a href="#home" title="North Carolina Child Support Portal Secure Home">Home</a></li>
+				<li><a href="${pageContext.request.contextPath}/cssHome.htm" title="State and county child support staff access online applications here">NC
+						Child Support Portal</a></li>
+				<li><a target="_blank" href="https://ecsts.dhhs.state.nc.us/Logon.do" title=" State Local Support Unit access customer service system here">Customer Service</a></li>
+			</ul>
+		</div>
+
+		<div id="content">
+			<div class="gutter">
+				<h2>Welcome to North Carolina Child Support Portal</h2>
+				<p>You are accessing a U.S. government information system. This
+					information system is provided for U.S. government-authorized use
+					only. Unauthorized or improper use of this system may result in
+					disciplinary action, as well as civil and criminal penalties.</p>
+					<p>By using this information system, you understand and consent to the
+					following:
+				<ul class="feature">
+
+					<li>I understand that I may be subject to penalties if I
+						submit fraudulent information.</li><br>
+					<li>I agree that I am responsible for all actions taken with
+						my account.</li><br>
+					<li>I understand that the State of North Carolina may ban me
+						from the use of these services if it is determined or suspected
+						that there has been misuse of the services.</li><br>
+					<li>I am authorized to do business on behalf of my employer or
+						client.</li><br>
+					<li>I understand that the State of North Carolina will
+						maintain and use the information I provide to verify my identity
+						and my relationship to the employer and I consent to the use of my
+						information for this purpose.</li><br>
+					<li>I have no expectation of privacy for any personal or
+						unofficial transaction conducted using this government equipment.
+						At any time, and for any lawful government purpose, the government
+						may monitor, intercept, and search and seize any communication or
+						data transmitted or stored on this information system.</li><br>
+				</ul></p>
+				<p>Any communication or data transmitted or stored on this
+					information system may be disclosed or used for any lawful
+					government purpose.</p>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="fwrap">
+				<div class="centered">
+					<table width='100%'>
+						<tr>
+							<td align="left" width="40%">
+								<h3>
+									<a target="_blank" href="http://www.nc.gov/">Official Web
+										Site of North Carolina</a>
+								</h3>
+							<td align="left" width="40%">
+								<h3>
+									<a target="_blank" href="http://www.ncdhhs.gov/divisions/dss">NC
+										Division of Social Services</a>
+								</h3>
+							</td>
+							<td align="left" width="10%">
+								<h3>
+									<a target="_blank" href="https://www.ncdhhs.gov/">NC DHHS </a>
+								</h3>
+							</td>
+							<td align="right" width="10%">
+								<h3>
+									<a target="_blank" href="http://10.55.31.228/ecoa/">CSS </a>
+								</h3>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

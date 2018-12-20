@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- Base Layout Definition which is included in all pages -->
+	<definition name="baseEcwa.definition" template="/WEB-INF/jsp/layout/ecwaLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="topBar" value="/WEB-INF/jsp/navigation/topBar.jsp" />
+		<put-attribute name="header" value="/WEB-INF/jsp/navigation/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/navigation/menu.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/navigation/footerPlain.jsp" />
+	</definition>
+
+	<definition name="baseEcwa.empty" template="/WEB-INF/jsp/layout/empty.jsp">
+		<put-attribute name="title" value="" />
+	</definition>
+
+	<definition name="login" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Login Page" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/login.jsp" />
+	</definition>
+
+	<definition name="LOGOUT" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Logout Page" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/logout.jsp" />
+	</definition>
+	
+	<definition name="ECWA_reports" extends="baseEcwa.definition">
+		<put-attribute name="title" value="ECWA Reports" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/reports.jsp" />
+	</definition>
+
+	<definition name="ECWA_loggedInHome" extends="baseEcwa.definition">
+		<put-attribute name="title" value="North Carolina Child Support Services" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/loggedInHome.jsp" />
+		<put-attribute name="footer" value="" />
+	</definition>
+
+	<definition name="ECWA_caseApplicationList" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Case Application List" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/navigation/tempWorkermenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseApplicationList.jsp" />
+	</definition>
+
+	<definition name="ECWA_caseWorkerSearch" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Case Worker Selection" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/cssworker/caseWorkerSearch.jsp" />
+	</definition>
+	
+	<definition name="ECWA_caseWorkerList" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Case Worker List" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/cssworker/caseWorkerList.jsp" />
+	</definition>
+	
+	<definition name="ECWA_caseWorkerDetail" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Case Worker Detail" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/cssworker/caseWorkerDetail.jsp" />
+	</definition>
+	
+	<definition name="ECWA_caseWorkerModify" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Update Case Worker" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/cssworker/caseWorkerModify.jsp" />
+	</definition>
+	
+	<definition name="ECWA_caseWorkerCreate" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Create Case Worker" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/cssworker/caseWorkerCreate.jsp" />
+	</definition>
+	
+	<definition name="ECWA_caseApplicationPartList" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Case Application Participants List" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseApplicationPartList.jsp" />
+	</definition>
+	<definition name="ECWA_caseActsPartList" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Acts Participants List" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseActsPartList.jsp" />
+	</definition>
+	<definition name="ECWA_caseActsPartDetails" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Acts Participants Details" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseActsPartDetails.jsp" />
+	</definition>
+	<definition name="ECWA_caseActsCreate" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Acts Create Case" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseActsCreate.jsp" />
+	</definition>
+	<definition name="ECWA_caseApplicationSearch" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Application Search" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseApplicationSearch.jsp" />
+	</definition>
+	<definition name="ECWA_caseApplicationPartUpdate" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Application Search" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseApplicationPartUpdate.jsp" />
+	</definition>
+	<definition name="ECWA_caseApplicationMiscInfo" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Application Search" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/ecwa/applprocess/caseApplicationPartMiscInfo.jsp" />
+	</definition>
+	<definition name="accessDenied" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Access Denied" />
+		<put-attribute name="body" value="/WEB-INF/jsp/content/accessDenied.jsp" />
+	</definition>
+	<!-- Errors -->
+	<definition name="apperror" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/WEB-INF/jsp/errors/error.jsp" />
+	</definition>
+	<definition name="error" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/WEB-INF/jsp/errors/error.jsp" />
+	</definition>
+	<definition name="404" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Page Not Found" />
+		<put-attribute name="body" value="/WEB-INF/jsp/errors/404.jsp" />
+	</definition>
+	<definition name="403" extends="baseEcwa.definition">
+		<put-attribute name="title" value="Access Denied" />
+		<put-attribute name="body" value="/WEB-INF/jsp/errors/403.jsp" />
+	</definition>
+</tiles-definitions>

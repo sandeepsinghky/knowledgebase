@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<!-- *************************************************************************** -->
+	<!-- =========== BEAN DEFINITONS FOR THE SERVICE OBJECTS ================ -->
+
+	<bean id="contextApplicationContextProvider" class="nc.dhhs.nccss.acts.ecwa.web.ApplicationContextProvider" />
+
+	<bean id="userService" class="nc.dhhs.nccss.acts.ecwa.web.service.impl.UserServiceImpl" />
+
+	<bean id="usageService" class="nc.dhhs.nccss.acts.ecwa.web.service.impl.UsageServiceImpl" />
+
+	<bean id="caseApplService" class="nc.dhhs.nccss.acts.ecwa.web.service.impl.CaseApplicationServiceImpl" />
+
+	<bean id="casePartService" class="nc.dhhs.nccss.acts.ecwa.web.service.impl.CaseParticipantServiceImpl" />
+
+	<bean id="codeLookUpService" class="nc.dhhs.nccss.acts.ecwa.web.service.impl.CodeLookUpServiceImpl" />
+	
+	<bean id="userSignatureService" class="nc.dhhs.nccss.acts.ecwa.web.service.impl.UserSignatureServiceImpl" />
+
+</beans>
